@@ -1,16 +1,16 @@
-#Data Modeling
+# Data Modeling
 
 - New columns can be added at any time
 - Not every row (that you see on the screen) will have every field populated
 
-##PRIMARY KEY
+## PRIMARY KEY
 - tells how to store and distribute data
 - first field is partition key
 - subsequent fields are clustering keys(how data is stored on disk)
 
 “Wide rows” refers to the rows that Cassandra is storing on disk, rather than the rows that are represented to you when you make a query.
 
-###Example 1: Illustration of How Data May Be Stored Using a COMPOUND KEY
+### Example 1: Illustration of How Data May Be Stored Using a COMPOUND KEY
 
 ```sql
 CREATE TABLE animals ( 
@@ -56,7 +56,7 @@ UPDATE url_metrics SET count = count + 1
 APPLY BATCH;
 ```
 
-##Collections
+## Collections
 
 - Cassandra also includes collections as part of its data model. Collections are a complex type that can provide flexibility in querying.
 
@@ -64,4 +64,4 @@ APPLY BATCH;
 - Lists - maintains order
 - Maps - <key, value> pair. Helps avoid saving whole json document into field.
 
-#Model your queries, not your data !
+# Model your queries, not your data !
