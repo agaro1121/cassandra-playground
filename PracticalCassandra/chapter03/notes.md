@@ -8,7 +8,7 @@
 - first field is partition key
 - subsequent fields are clustering keys(how data is stored on disk)
 
-“Wide rows” refers to the rows that Cassandra is storing on disk, rather than the rows that are represented to you when you make a query.
+**“Wide rows” refers to the rows that Cassandra is storing on disk, rather than the rows that are represented to you when you make a query.**
 
 ### Example 1: Illustration of How Data May Be Stored Using a COMPOUND KEY
 
@@ -22,6 +22,7 @@ CREATE TABLE animals (
 	PRIMARY KEY(family, genus) 
 );
 Data for each family will be stored on the same replica sets and presorted, or clustered, by the genus.This will allow for very fast lookups when the family and genus for an animal are known.```
+```
 
 Hot spots occur when a particular key (row) gets so many queries that it causes the load on the machine to spike. High load on a given machine can cause cluster-wide complications as the communication channels start to back up. Consideration also needs to be given to the row size. A single row has to fit on disk; if you have a single row containing billions of columns, it may extend past the amount of available disk space on the drive.
 
@@ -38,8 +39,9 @@ CREATE TABLE events (
 	data text,
 	PRIMARY KEY((hour, event_type), time)
 ) WITH CLUSTERING ORDER BY (time DESC);
-```
+
 Separates stored events by the hour and then further by event_type for optimizaton. This will move event_type groups to different areas of disk to avoid hotspots.
+```
 
 ###Example 3: Example of Using an Atomic Counter BATCH to Insert and Update
 ```sql
@@ -56,7 +58,7 @@ UPDATE url_metrics SET count = count + 1
 APPLY BATCH;
 ```
 
-## Collections
+##Collections
 
 - Cassandra also includes collections as part of its data model. Collections are a complex type that can provide flexibility in querying.
 
@@ -64,4 +66,4 @@ APPLY BATCH;
 - Lists - maintains order
 - Maps - <key, value> pair. Helps avoid saving whole json document into field.
 
-# Model your queries, not your data !
+#Model your queries, not your data !
