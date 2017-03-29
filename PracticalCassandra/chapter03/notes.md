@@ -28,7 +28,7 @@ Hot spots occur when a particular key (row) gets so many queries that it causes 
 
 Modeling for Cassandra should follow the idea that disk space is cheap, so duplicating data (even multiple times) should not be an issue. In fact, “normalization” of data is an anti-pattern in Cassandra.
 
-###Example 2: Example of Cassandra Data Model for Log Storage (Optimized)
+### Example 2: Example of Cassandra Data Model for Log Storage (Optimized)
 
 ```sql
 CREATE TABLE events ( 
@@ -43,7 +43,7 @@ CREATE TABLE events (
 Separates stored events by the hour and then further by event_type for optimizaton. This will move event_type groups to different areas of disk to avoid hotspots.
 ```
 
-###Example 3: Example of Using an Atomic Counter BATCH to Insert and Update
+### Example 3: Example of Using an Atomic Counter BATCH to Insert and Update
 ```sql
 INSERT INTO events (hour, id, time, event_type, data)
 	VALUES ('2013-06-13 11:00:00', NOW(), '2013-06-13 11:43:23',
@@ -58,7 +58,7 @@ UPDATE url_metrics SET count = count + 1
 APPLY BATCH;
 ```
 
-##Collections
+## Collections
 
 - Cassandra also includes collections as part of its data model. Collections are a complex type that can provide flexibility in querying.
 
@@ -66,4 +66,4 @@ APPLY BATCH;
 - Lists - maintains order
 - Maps - <key, value> pair. Helps avoid saving whole json document into field.
 
-#Model your queries, not your data !
+# Model your queries, not your data !
