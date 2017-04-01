@@ -4,22 +4,22 @@
 
 | Type | Description                |
 | -------- | -----------------------|
-|   ascii | ASCII character string. |    
-|   bigint | 64-bit signed long. |    
-|   blob | Arbitrary bytes (no validation). |    
-|   boolean | True or false. |    
-|   counter | Counter column (64-bit signed value). |    
-|   decimal | Variable-precision decimal. |    
-|   double | 64-bit IEEE 754 floating point. |    
-|   float | 32-bit IEEE 754 floating point. |    
-|   inet | An IP address. It can be either 4 bytes long (IPv4) or 16 bytes long (IPv6). There is no inet constant; IP addresses should be inputted as strings. |    
-|   int | 32-bit signed int. |    
-|   text | UTF-8 encoded string. |    
-|   timestamp | A timestamp. Timestamps can be entered as either a string date or an integer as the number of milliseconds since the UNIX epoch (January 1, 1970, UTC). |    
-|   timeuuid | Type 1 UUID. This is generally used as a “conflict-free” timestamp. |    
-|   uuid | Type 1 or type 4 UUID. |    
-|   varchar | UTF-8 encoded string. |    
-|   varint | Arbitrary-precision integer. |   
+| ascii | ASCII character string. |    
+| bigint | 64-bit signed long. |    
+| blob | Arbitrary bytes (no validation). |    
+| boolean | True or false. |    
+| counter | Counter column (64-bit signed value). |    
+| decimal | Variable-precision decimal. |    
+| double | 64-bit IEEE 754 floating point. |    
+| float | 32-bit IEEE 754 floating point. |    
+| inet | An IP address. It can be either 4 bytes long (IPv4) or 16 bytes long (IPv6). There is no inet constant; IP addresses should be inputted as strings. |    
+| int | 32-bit signed int. |    
+| text | UTF-8 encoded string. |    
+| timestamp | A timestamp. Timestamps can be entered as either a string date or an integer as the number of milliseconds since the UNIX epoch (January 1, 1970, UTC). |    
+| timeuuid | Type 1 UUID. This is generally used as a “conflict-free” timestamp. |    
+| uuid | Type 1 or type 4 UUID. |    
+| varchar | UTF-8 encoded string. |    
+| varint | Arbitrary-precision integer. |   
 
 ## Data Formats:
 
